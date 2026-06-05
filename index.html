@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-sparkles"></i> Countdown <i class="fas fa-sparkles"></i></h1>
+        </div>
+
+        <div class="input-section">
+            <input 
+                type="text" 
+                id="eventName" 
+                placeholder="What are you counting down to?" 
+                class="input-field"
+            >
+            <input 
+                type="datetime-local" 
+                id="eventDate" 
+                class="input-field"
+            >
+            <button onclick="startCountdown()" class="btn-primary">
+                <i class="fas fa-play"></i> Start Countdown
+            </button>
+        </div>
+
+        <div id="countdownDisplay" class="countdown-display hidden">
+            <h2 id="eventTitle" class="event-title"></h2>
+            
+            <div class="countdown-boxes">
+                <div class="time-box">
+                    <span id="days" class="time-value">0</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-box">
+                    <span id="hours" class="time-value">0</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-box">
+                    <span id="minutes" class="time-value">0</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-box">
+                    <span id="seconds" class="time-value">0</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+
+            <div id="completedMessage" class="completed-message hidden">
+                <h3><i class="fas fa-check-circle"></i> It's Here <i class="fas fa-check-circle"></i></h3>
+                <p>Your countdown is complete!</p>
+            </div>
+
+            <button onclick="resetCountdown()" class="btn-secondary">
+                <i class="fas fa-redo"></i> Start Over
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
